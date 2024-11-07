@@ -31,9 +31,6 @@
             height: 90px;
             margin-left: 30px;
         }
-        .navbar-toggler {
-            background-color: white;
-        }
         
         /* Estilos de Fondo */
         .background-div {
@@ -50,14 +47,15 @@
         }
         .inner-container {
             background: rgba(255, 255, 255, 0.8);
-            padding: 0.5rem;
+            padding: 2rem;
             border-radius: 10px;
-            width: 50vw;
-            height: 52vh;
+            width: auto;
+            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin: 20px;
         }
 
         /* Estilos de Footer */
@@ -74,7 +72,21 @@
             margin-right: 5px;
         }
         .offcanvas {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: #4d5f82;
+        }
+        .navbar-toggler {
+            background-color: #4d5c70;
+            border: 1px solid #072146;
+            padding: 5px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .navbar-toggler:hover:not(:disabled) {
+            background: white;
+            color: #072146;
+            text-shadow: 0 0.1rem
         }
     </style>
 </head>
@@ -83,39 +95,24 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('images/JDKJulietasLogoBlanco.png') }}" alt="Logo" class="img-logoNav">
-            </a>
+            <a class="navbar-brand" href="#"><img src="{{ asset('images/JDKJulietasLogoBlanco.png') }}" alt="" class="img-logoNav"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white"></button>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: white">Menu</h5>
+                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="offcanvas" aria-label="Close" style="color: rgb(255, 255, 255)"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#"style="color: white">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <a class="nav-link" href="#"style="color: white">Usuarios</a>
                         </li>
                     </ul>
-                    <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -124,11 +121,13 @@
     <!-- Contenido Principal -->
     <div class="background-div">
         <div class="inner-container">
+        
             <form>
-                <legend>Registra un usuario</legend>
-                
+            <div style="background-color: #143d7c; color: white; padding: 20px; display: flex; align-items: center; justify-content: center; text-align: center; margin-bottom: 30px;">
+                    <legend style="color: white; margin: 0;">Registra un usuario</legend>
+                </div>               
                 <div class="mb-3">
-                    <label class="form-label" for="input-name">Nombre y apellidos:</label>
+                    <label class="form-label" for="input-name" style="margin: 1px;">Nombre y apellidos:</label>
                     <div class="input-group">
                         <input type="text" aria-label="First name" class="form-control" placeholder="Nombre">
                         <input type="text" aria-label="Last name" class="form-control" placeholder="Apellidos">
@@ -139,6 +138,14 @@
                     <input type="date" id="input-age" class="form-control bg-gray-700 text-gray-200 border-0 rounded-md p-2">
                 </div>
                 <div class="mb-3">
+                    <label class="form-label" for="input-name">Direccion:</label>
+                        <input type="text" aria-label="Last name" class="form-control" placeholder="Direccion">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="input-name">Telefono:</label>
+                        <input type="text" aria-label="Last name" class="form-control" placeholder="Telefono">
+                </div>
+                <div class="mb-3">
                     <label class="form-label" for="disabledSelect">Escoja un rol:</label>
                     <select id="roles" class="form-select">
                         <option>~</option>
@@ -147,11 +154,7 @@
                         <option>Alumno</option>
                     </select>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label" for="input-name">Direccion:</label>
-                        <input type="text" aria-label="Last name" class="form-control" placeholder="Direccion">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" style="background-color: #b20505">Submit</button>
             </form>
         </div>
     </div>
