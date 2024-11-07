@@ -127,7 +127,7 @@
         <div class="inner-container">
         <div class="card my-4" >
         <div class="card-header text-white " style='background-color: #143d7c'>
-            <h2>Crear Nuevo Examen</h2>
+            <h2>Crear Nueva Clase</h2>
         </div>
         <div class="card-body">
             <form>
@@ -139,7 +139,7 @@
 
                 <div class="mb-3">
                     <label for="diasClase" class="form-label">Días de la clase:</label>
-                    <input type="date" id="diasClase" class="form-control" placeholder="Ingresar los días de la clase">
+                    <input type="text" id="diasClase" class="form-control" placeholder="Ingresar los días de la clase">
                 </div>
 
                 <div class="mb-3">
