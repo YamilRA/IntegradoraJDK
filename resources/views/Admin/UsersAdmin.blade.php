@@ -7,12 +7,13 @@
     <title>Jidokwan Julietas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Estilos Generales */
-        html, body {
+       /* Estilos Generales */
+       html, body {
             height: 100%;
             margin: 0;
             padding: 0;
         }
+
         body {
             display: flex;
             flex-direction: column;
@@ -23,18 +24,17 @@
             background-color: #072146;
             padding: 1rem 0;
         }
+
         .container-fluid {
             background-color: #072146;
         }
+
         .img-logoNav {
             width: 90px;
             height: 90px;
             margin-left: 30px;
         }
-        .navbar-toggler {
-            background-color: white;
-        }
-        
+
         /* Estilos de Fondo */
         .background-div {
             flex: 1;
@@ -48,16 +48,18 @@
             justify-content: center;
             align-items: center;
         }
+
         .inner-container {
             background: rgba(255, 255, 255, 0.8);
-            padding: 0.5rem;
+            padding: 2rem;
             border-radius: 10px;
-            width: 50vw;
-            height: 52vh;
+            width: auto;
+            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin: 20px;
         }
 
         /* Estilos de Footer */
@@ -65,16 +67,34 @@
             width: 60px;
             height: 60px;
         }
+
         .footer-link, .offcanvas-title, .offcanvas-body .nav-link, .offcanvas-body .dropdown-item {
             color: white;
         }
+
         .imgFace {
             width: 28px;
             height: 28px;
             margin-right: 5px;
         }
+
         .offcanvas {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: #4d5f82;
+        }
+
+        .navbar-toggler {
+            background-color: #4d5c70;
+            border: 1px solid #072146;
+            padding: 5px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .navbar-toggler:hover:not(:disabled) {
+            background: white;
+            color: #072146;
+            text-shadow: 0 0.1rem;
         }
     </style>
 </head>
@@ -124,37 +144,63 @@
     <!-- Contenido Principal -->
     <div class="background-div">
         <div class="inner-container">
-            <form>
-                <legend>Registra un usuario</legend>
-                
-                <div class="mb-3">
-                    <label class="form-label" for="input-name">Nombre y apellidos:</label>
-                    <div class="input-group">
-                        <input type="text" aria-label="First name" class="form-control" placeholder="Nombre">
-                        <input type="text" aria-label="Last name" class="form-control" placeholder="Apellidos">
-                    </div>
+            <div class="card my-4">
+                <div class="card-header text-white" style='background-color: #143d7c'>
+                    <h2>Registra un nuevo usuario</h2>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label" for="input-age">Fecha de Nacimiento:</label>
-                    <input type="date" id="input-age" class="form-control bg-gray-700 text-gray-200 border-0 rounded-md p-2">
+                <div class="card-body">
+                    <form id="userForm" action="{{ route('users.store') }}" method="POST">
+                        @csrf
+                        <div class="mb-3">
+                            <label class="form-label" for="input-name">Nombre y apellidos:</label>
+                            <div class="input-group">
+                                <input type="text" name="first_name" aria-label="First name" class="form-control" placeholder="Nombre">
+                                <input type="text" name="last_name" aria-label="Last name" class="form-control" placeholder="Apellidos">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input-age">Fecha de Nacimiento:</label>
+                            <input type="date" name="birth_date" id="input-age" class="form-control bg-gray-700 text-gray-200 border-0 rounded-md p-2">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input-address">Dirección:</label>
+                            <input type="text" name="address" id="input-address" class="form-control" placeholder="Dirección">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input-phone">Teléfono:</label>
+                            <input type="text" name="phone" id="input-phone" class="form-control" placeholder="Teléfono">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input-username">Nombre de usuario:</label>
+                            <input type="text" name="username" id="input-username" class="form-control" placeholder="Nombre de usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input-password">Contraseña:</label>
+                            <input type="password" name="password" id="input-password" class="form-control" placeholder="Contraseña">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input-email">Correo electrónico:</label>
+                            <input type="email" name="email" id="input-email" class="form-control" placeholder="Correo electrónico">
+                        </div>
+                        <div class="mb-3">
+                            <label for="role_id">Rol</label>
+                            <select name="role_id" class="form-control">
+                                @foreach($roles as $role)
+                                    <option value="{{ $role->id }}" {{ isset($user) && $user->role_id == $role->id ? 'selected' : '' }}>
+                                        {{ $role->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="background-color: #b20505">Enviar</button>
+                    </form>
+
                 </div>
-                <div class="mb-3">
-                    <label class="form-label" for="disabledSelect">Escoja un rol:</label>
-                    <select id="roles" class="form-select">
-                        <option>~</option>
-                        <option>Administrador</option>
-                        <option>Profesor</option>
-                        <option>Alumno</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="input-name">Direccion:</label>
-                        <input type="text" aria-label="Last name" class="form-control" placeholder="Direccion">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            </div>
         </div>
-    </div>
+    </div>
+
+
 
     <!-- Footer -->
     <footer class="text-center">

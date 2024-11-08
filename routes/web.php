@@ -4,6 +4,8 @@ use App\Http\Controllers\AlumnoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JidokwanController;
 use App\Models\CustomUser;
+use App\Http\Controllers\UserController;
+
 
 
 Route::get('/',[JidokwanController::class,'vistaprincipal']);
@@ -26,3 +28,6 @@ Route::get('/admin', function () {
 Route::get('/admin/users', function () {
     return view('Admin/UsersAdmin');
 });
+
+Route::get('/admin/users', [UserController::class, 'create'])->name('admin.users.create');
+Route::post('/users', [UserController::class, 'store'])->name('users.store');

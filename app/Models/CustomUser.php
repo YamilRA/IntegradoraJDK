@@ -11,9 +11,7 @@ class CustomUser extends Model
 {
     protected $table = 'custom_users';
     protected $primaryKey = 'id';
-    public $fillable = ['username','password','email', 'recovery_email','recovery_token', 
-                            'token_expiration', 'registration_date', 'active', 'created_at', 
-                            'updated_at'];
+    public $fillable = ['username','password','email', 'registration_date', 'active', ];
 
     public function UserRol(){
         return $this->hasMany(UserRol::class, 'user_id', 'id');
