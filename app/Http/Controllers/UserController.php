@@ -13,11 +13,12 @@ use Illuminate\View\View;
 class UserController extends Controller
 {
     public function index(): View
-    {
-        $users = DB::select('select * from users where active = ?', [1]);
- 
-        return view('user.index', ['users' => $users]); 
-    }   
+{
+    $users = DB::table('custom_users')->where('active', 1)->get();
+    return view('users.index', ['users' => $users]);
+
+}
+
     public function create()
     {
         $roles = Role::all();
@@ -27,9 +28,6 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        
-        
-        // Validación de datos
         $validatedData = $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
@@ -41,8 +39,7 @@ class UserController extends Controller
             'email' => 'required|email',
             'role_id' => 'required|exists:roles,id',
         ]);
-        
-        // Creación de registro en People
+    
         $person = \App\Models\People::create([
             'first_name' => $validatedData['first_name'],
             'last_name' => $validatedData['last_name'],
@@ -50,8 +47,7 @@ class UserController extends Controller
             'address' => $validatedData['address'],
             'phone' => $validatedData['phone'],
         ]);
-        
-        // Creación de registro en CustomUser
+    
         $user = CustomUser::create([
             'person_id' => $person->id,
             'username' => $validatedData['username'],
@@ -60,17 +56,25 @@ class UserController extends Controller
             'active' => 1,
             'registration_date' => now(),
         ]);
-        
-        // Inserción en user_role
+    
         DB::table('user_role')->insert([
             'user_id' => $user->id,
             'role_id' => $validatedData['role_id'],
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        dd('Paso 4: Inserción en user_role exitosa');
+    
+        if ($validatedData['role_id'] == 2) { 
+            \App\Models\Teacher::create(['person_id' => $person->id, 'rfc' => 'RFC123456789']);
+        } elseif ($validatedData['role_id'] == 3) { 
+            \App\Models\Student::create(['person_id' => $person->id, 'student_number' => 'STU12345']);
+        } elseif ($validatedData['role_id'] == 1) { 
+            \App\Models\Administrator::create(['person_id' => $person->id, 'admin_code' => 'ADM12345']);
+        }
     
         return redirect()->route('users.index')->with('success', 'Usuario creado exitosamente');
     }
+    
+
     
 }
