@@ -24,7 +24,6 @@ Route :: get('/alumno/grupos', [AlumnoController:: class , 'grupos']);
 Route :: get('/alumno/finanzas', [AlumnoController:: class , 'finanzas']);
 
 
-
 Route::get('/admin/users', function () {
     return view('Admin/UsersAdmin');
 });
