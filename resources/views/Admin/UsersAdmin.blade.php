@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 
@@ -113,32 +114,54 @@
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white"></button>
+=======
+@extends('layouts/Molde')
+@section('title', 'UsersAdmin')
+@section('content')
+<!-- Contenido Principal -->
+<div class="background-div">
+        <div class="inner-container">
+            <div class="card my-4">
+                <div class="card-header text-white" style='background-color: #143d7c'>
+                    <h2>Registra un nuevo usuario</h2>
+>>>>>>> beta
                 </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label" for="input-name">Nombre y apellidos:</label>
+                            <div class="input-group">
+                                <input type="text" aria-label="First name" class="form-control" placeholder="Nombre">
+                                <input type="text" aria-label="Last name" class="form-control" placeholder="Apellidos">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input-age">Fecha de Nacimiento:</label>
+                            <input type="date" id="input-age" class="form-control bg-gray-700 text-gray-200 border-0 rounded-md p-2">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input-address">Dirección:</label>
+                            <input type="text" id="input-address" class="form-control" placeholder="Dirección">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input-phone">Teléfono:</label>
+                            <input type="text" id="input-phone" class="form-control" placeholder="Teléfono">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="roles">Escoja un rol:</label>
+                            <select id="roles" class="form-select">
+                                <option value="">~</option>
+                                <option value="admin">Administrador</option>
+                                <option value="teacher">Profesor</option>
+                                <option value="student">Alumno</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="background-color: #b20505"></button>
                     </form>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
     </nav>
 
     <!-- Contenido Principal -->
@@ -227,3 +250,7 @@
 </body>
 
 </html>
+=======
+    </div>
+    @endsection         
+>>>>>>> beta
