@@ -3,6 +3,7 @@
 use App\Http\Controllers\AlumnoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JidokwanController;
+use App\Http\Controllers\LayoutController;
 use App\Models\CustomUser;
 
 
@@ -26,3 +27,6 @@ Route::get('/admin', function () {
 Route::get('/admin/users', function () {
     return view('Admin/UsersAdmin');
 });
+
+Route::get('/molde',[LayoutController::class,'molde']);
+
