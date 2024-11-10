@@ -126,14 +126,17 @@
         </div>
     </nav>
 
-    @yield('content')
+    <!-- Contenido Principal -->
+    <div class="background-div">
+       @yield('content')
+    </div>
 
     <!-- Footer -->
     <footer class="text-center">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-4 d-flex flex-column align-items-center justify-content-center footer-link">
-                    <p>8717976623</p>
+                    <p>871-797-6623</p>
                     <p><a href="https://maps.app.goo.gl/DCgQmxAuw8RjsNTo6" class="footer-link">Querétaro 120, La Merced, 27296 Torreón, Coah.</a></p>
                 </div>
                 <div class="col-4 d-flex align-items-center justify-content-center">
@@ -153,3 +156,5 @@
 </body>
 
 </html>
+
+// prove

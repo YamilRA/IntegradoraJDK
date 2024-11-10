@@ -8,8 +8,8 @@ class People extends Model
 {
     protected $table = 'people';
     protected $primaryKey = 'id';
-    public $fillable = ['id','first_name','last_name','birth_date','address',
-                        'phone','created_at', 'updated_at'];
+    public $fillable = ['first_name', 'last_name', 'birth_date', 'address', 'phone'];
+
 
     public function Administrator()
     {
@@ -25,5 +25,5 @@ class People extends Model
     {
         return $this-> hasOne(Teacher::class, 'person_id', 'id');
     }
-
+    
 }
