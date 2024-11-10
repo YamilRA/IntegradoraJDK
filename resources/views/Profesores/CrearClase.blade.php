@@ -1,9 +1,9 @@
-@extends('../Layouts.Molde')
+@extends('layouts.Molde')
 @section('title', 'Crear nueva Clase')
-@section('contents')
+@section('content')
     <!-- Contenido Principal -->
     <div class="background-div">
-        <div class="inner-container">
+        <div class="inner-container-fluid">
         <div class="card my-4" >
         <div class="card-header text-white " style='background-color: #143d7c'>
             <h2>Crear Nueva Clase</h2>
@@ -23,12 +23,12 @@
 
                 <div class="mb-3">
                     <label for="horaInicio" class="form-label">Hora de inicio:</label>
-                    <input type="time" id="fechaInicio" class="form-control" placeholder="Ingresar la hora de inicio del examen">
+                    <input type="time" id="fechaInicio" class="form-control" placeholder="Ingresar la hora de inicio de la clase">
                 </div>
 
                 <div class="mb-3">
                     <label for="horaFin" class="form-label">Hora de fin:</label>
-                    <input type="time" id="horaFin" class="form-control" placeholder="Ingresar la hora de fin del examen">
+                    <input type="time" id="horaFin" class="form-control" placeholder="Ingresar la hora de fin de la clase">
                 </div>
 
                 <button type="submit" class="btn btn-primary" style='background-color: #b20505'>Crear Clase</button>
