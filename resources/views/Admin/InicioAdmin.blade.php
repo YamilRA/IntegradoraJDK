@@ -3,7 +3,6 @@
 @section('title', 'inicioAdmin')
 
 @section('content')
-    <div class="background-div">
         <div class="inner-container">
             <h2>Notificaciones</h2>
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -43,5 +42,4 @@
                 </button>
             </div>
         </div>
-    </div>
 @endsection
