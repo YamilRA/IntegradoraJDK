@@ -1,5 +1,5 @@
     @extends('layouts.Molde')
-    @section('title', 'Crear Examen')
+    @section('title', 'Crear nuevo Examen')
     @section('content')
     
     <!-- Contenido Principal -->
