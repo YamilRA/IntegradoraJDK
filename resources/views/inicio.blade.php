@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -38,7 +37,7 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .btn-customAcc {
             background-color: #0E2A52;
             color: white;
@@ -86,11 +85,11 @@
             padding: 1rem;
             border-radius: 10px;
         }
-        
+
         #container-fluid{
             background-color: #072146;
         }
-        
+
     </style>
 </head>
 <body>

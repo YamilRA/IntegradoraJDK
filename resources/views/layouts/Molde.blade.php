@@ -136,15 +136,15 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-4 d-flex flex-column align-items-center justify-content-center footer-link">
-                    <p>871-797-6623</p>
-                    <p><a href="https://maps.app.goo.gl/DCgQmxAuw8RjsNTo6" class="footer-link">Querétaro 120, La Merced, 27296 Torreón, Coah.</a></p>
+                    <p>☎️ 871-797-6623</p>
+                    <p><a href="https://maps.app.goo.gl/DCgQmxAuw8RjsNTo6" class="footer-link">📍 Querétaro 120, La Merced, 27296 Torreón, Coah.</a></p>
                 </div>
                 <div class="col-4 d-flex align-items-center justify-content-center">
                     <img src="{{ asset('images/JDKJulietasLogoBlanco.png') }}" alt="Footer Logo" class="footer-logo">
                 </div>
                 <div class="col-4 d-flex align-items-center justify-content-center footer-contact">
                     <p>
-                        <img src="{{ asset('images/facebookIcon.png') }}" alt="Facebook Icon" class="imgFace"> 
+                        <img src="{{ asset('images/facebookIcon.png') }}" alt="Facebook Icon" class="imgFace">
                         <a href="https://www.facebook.com/JidoKwanGymJulietas" class="footer-link">Jido Kwan Gym Julietas</a>
                     </p>
                 </div>
@@ -156,5 +156,3 @@
 </body>
 
 </html>
-
-// prove

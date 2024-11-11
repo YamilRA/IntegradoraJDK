@@ -26,8 +26,4 @@ class AdminController extends Controller
     {
         return view('Admin/UserAlumno');
     }
-    public function finanzasAdmin()
-    {
-        return view('Admin/finanzasAdmin');
-    }
 }
