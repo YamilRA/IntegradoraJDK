@@ -26,6 +26,7 @@
                                     <th scope="col">Estado</th>
                                     <th scope="col">Alumnos</th>
                                     <th scope="col">Agregar alumnos</th>
+                                    <th scope="col">Generar hoja de examen</th>
                                 </tr>
                                 </thead>
                                 <tbody class="table-group-divider">
@@ -37,8 +38,8 @@
                                     <td>10:00 AM</td>
                                     <td>11:00 AM</td>
                                     <td><span class="badge bg-success">Pendiente</span></td>
-                                    <td>20</td>
-                                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-1">Agregar alumnos</button></td>
+                                    <td><a href="#" data-bs-toggle="modal" data-bs-target="#modal-2">Alumnos del examen</a></td>
+                                    <td><a href="#" data-bs-toggle="modal" data-bs-target="#modal-1">Agregar alumnos</a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -61,13 +62,66 @@
                                                     </button>
                                                 </h2>
                                                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body"></div>
+                                                    <div class="accordion-body">
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th scope="col">Matricula</th>
+                                                                <th scope="col">Nombre</th>
+                                                                <th scope="col">Cinta</th>
+                                                                <th scope="col">Seleccionar</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody class="table-group-divider">
+                                                            <tr>
+                                                                <th scope="row">Alejandro1</th>
+                                                                <td>Alejandro Ortiz Talamantes</td>
+                                                                <td>Negra 1 Dan</td>
+                                                                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                                        <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #b20505; color: white;">Guardar Cambios</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="modal-2" tabindex="-1" aria-labelledby="modal-1Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modal-1Label">Examen</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th scope="col">Matricula</th>
+                                                                <th scope="col">Nombre</th>
+                                                                <th scope="col">Cinta</th>
+                                                                <th scope="col">Cinta a pasar</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody class="table-group-divider">
+                                                            <tr>
+                                                                <th scope="row">Alejandro1</th>
+                                                                <td>Alejandro Ortiz Talamantes</td>
+                                                                <td>Negra 1 Dan</td>
+                                                                <td>Negra 2 Dan</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #b20505; color: white;">Salir</button>
                                     </div>
                                 </div>
                             </div>
