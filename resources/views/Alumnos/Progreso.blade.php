@@ -11,17 +11,23 @@
             </ul>
     
             <div id="cintas" class="content-section">
-                <table class="table table-bordered w-100">
-                    <tr class="table-dark">
+                <table class="table table-bordered w-100%">
+                    <tr class="table-dark bg-white">
                         <th>mis cinta</th>
                         <th>mis examenes</th>
                     </tr>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
     
             <div id="torneos" class="content-section">
-                <table class="table table-bordered w-100">
-                    <tr class="table-dark">
+                <table class="table table-bordered w-150">
+                    <tr class="table-dark bg-white">
                         <th>mis torneos</th>
                         <th>mis resultados</th>
                     </tr>

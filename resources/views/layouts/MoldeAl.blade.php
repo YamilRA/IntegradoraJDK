@@ -36,7 +36,7 @@
         }
 
         .background-div {
-            background-color: rgba(127, 144, 245, 0.473);
+            background-image: url('{{ asset('images/FondoUser.jpg') }}');
             width: 100%;
             height: 100%;
             display: flex;
@@ -45,10 +45,11 @@
         }
 
         .background-div-pro {
-            background-color: rgba(127, 144, 245, 0.473);
+            background-image: url('{{ asset('images/FondoUser.jpg') }}');
             width: 100%;
             height: 100vh;
             display: flex;
+            justify-content: start;
         }
 
         .menu-vertical {
@@ -91,8 +92,8 @@
         }
 
         .table {
-           max-width: 80%;
-           min-height: 80%;
+           max-width: 100%;
+           min-height: 100%;
            justify-content: end;
         }
 
