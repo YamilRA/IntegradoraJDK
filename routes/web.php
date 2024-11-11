@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JidokwanController;
 use App\Http\Controllers\LayoutController;
+use App\Http\Controllers\ProfesorController;
 use App\Models\CustomUser;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TeacherController;
@@ -13,14 +14,22 @@ use App\Http\Controllers\StudentController;
 
 
 
-Route::get('/',[JidokwanController::class,'vistaprincipal']);
+Route::get('/',[ProfesorController::class,'vistaprincipal']);
 
+<<<<<<< HEAD
 Route::get('/login', [JidokwanController::class, 'getlogin'])->name('login');
 Route::post('/login', [UserController::class, 'store']); 
+=======
+Route::get('/login',[ProfesorController::class,'getlogin']);
+>>>>>>> c4b46745f34b8e04dedfc1c270a1c2cbaa2be572
 
-Route::get('/cexamen',[JidokwanController::class,'crearexamen']);
+Route::get('/crear/examen',[ProfesorController::class,'crearexamen']);
 
-Route::get('/cclase',[JidokwanController::class,'crearclase']);
+Route::get('/crear/clase',[ProfesorController::class,'crearclase']);
+
+Route::get('/modificar/clase',[ProfesorController::class,'modificarclase']);
+
+Route::get('/asignar/alumno/clase',[ProfesorController::class,'asignarAlumnoClase']);
 
 Route :: get('/alumno/progresos', [StudentController:: class , 'progresos']);
 Route :: get('/alumno/avisos', [StudentController:: class , 'avisos']);

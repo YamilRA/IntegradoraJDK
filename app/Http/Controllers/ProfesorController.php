@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\CustomUser;
 use App\Http\Controllers\Controller;
 
-class JidokwanController extends Controller
+class ProfesorController extends Controller
 {
     public function vistaprincipal(){
         return view('inicio');
@@ -24,5 +24,13 @@ class JidokwanController extends Controller
 
     public function crearclase(){
         return view('Profesores.CrearClase');
+    }
+
+    public function modificarclase(){
+        return view('Profesores.ModificarClase');
+    }
+
+    public function asignarAlumnoClase(){
+        return view('Profesores.AsignarAlumnoClase');
     }
 }
