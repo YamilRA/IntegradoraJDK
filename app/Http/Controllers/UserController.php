@@ -29,7 +29,6 @@ class UserController extends Controller
     {
         
         
-        // Validación de datos
         $validatedData = $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
@@ -42,7 +41,6 @@ class UserController extends Controller
             'role_id' => 'required|exists:roles,id',
         ]);
         
-        // Creación de registro en People
         $person = \App\Models\People::create([
             'first_name' => $validatedData['first_name'],
             'last_name' => $validatedData['last_name'],
@@ -51,7 +49,6 @@ class UserController extends Controller
             'phone' => $validatedData['phone'],
         ]);
         
-        // Creación de registro en CustomUser
         $user = CustomUser::create([
             'person_id' => $person->id,
             'username' => $validatedData['username'],
@@ -61,7 +58,6 @@ class UserController extends Controller
             'registration_date' => now(),
         ]);
         
-        // Inserción en user_role
         DB::table('user_role')->insert([
             'user_id' => $user->id,
             'role_id' => $validatedData['role_id'],
