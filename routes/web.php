@@ -16,12 +16,7 @@ use App\Http\Controllers\StudentController;
 
 Route::get('/',[ProfesorController::class,'vistaprincipal']);
 
-<<<<<<< HEAD
-Route::get('/login', [JidokwanController::class, 'getlogin'])->name('login');
-Route::post('/login', [UserController::class, 'store']); 
-=======
 Route::get('/login',[ProfesorController::class,'getlogin']);
->>>>>>> c4b46745f34b8e04dedfc1c270a1c2cbaa2be572
 
 Route::get('/crear/examen',[ProfesorController::class,'crearexamen']);
 
