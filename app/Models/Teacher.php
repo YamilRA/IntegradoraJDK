@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Teacher extends Model
 {
     protected $table = 'teachers';
-    protected $primaryKey = 'id';
-    public $fillable = ['id', 'person_id', 'rfc', 'created_at', 'updated_at'];
+    public $fillable = [ 'person_id', 'rfc'];
 
     public function People(){
 

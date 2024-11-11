@@ -44,56 +44,9 @@
             justify-content: end;
         }
 
-        .background-div-pro {
-            background-image: url('{{ asset('images/FondoUser.jpg') }}');
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: start;
-        }
-
-        .menu-vertical {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            background-color: #343a40;
-            border-radius: 8px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            display: flex; 
-            flex-direction: column; 
-        }
-
-        .menu-vertical li {
-            color: white;
-            padding: 10px 20px; 
-            font-size: 16px;
-            cursor: pointer;
-            text-align: left; 
-            border-bottom: 1px solid #495057; 
-            transition: background-color 0.3s ease; 
-        }
-
-        .menu-vertical li:hover {
-            background-color: #495057; 
-        }
-
-        .content-section {
-            display: none;
-            flex-grow: 1;
-            padding: 20px;
-        }
-
-        .content-section.active {
-            display: block;
-        }
-
-        .content-section table {
-            width: 100%;
-        }
-
         .table {
-           max-width: 100%;
-           min-height: 100%;
+           max-width: 80%;
+           min-height: 80%;
            justify-content: end;
         }
 
@@ -165,8 +118,12 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#" style="color: white">Inicio</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('alumno.progresos') }}" style="color: white">Mi Progreso</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white"> Mi Progreso  </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style='background-color: #143e7c00'>
+                                <li><a class="dropdown-item" href="{{ route('alumno.cintas') }}" style="color:rgb(255, 252, 252)">Mis cintas/examenes</a></li>
+                                <li><a class="dropdown-item" href="{{ route('alumno.eventos') }}" style="color:rgb(255, 255, 255)">Mis eventos</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{ route('alumno.avisos') }}" style="color: white">Mis Avisos</a>
