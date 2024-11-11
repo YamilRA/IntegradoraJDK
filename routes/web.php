@@ -38,3 +38,6 @@ Route::get('/molde',[LayoutController::class,'molde']);
 
 Route::get('/login/admin', [AdminController::class,'inicioAdmin']);
 Route::get ('/login/admin/addUser',[AdminController::class,'users']);
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+
