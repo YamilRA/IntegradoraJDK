@@ -35,18 +35,65 @@
             margin-left: 30px;
         }
 
-        /* Estilos de Fondo */
         .background-div {
-            flex: 1;
+            background-color: rgba(127, 144, 245, 0.473);
             width: 100%;
             height: 100%;
-            background-image: url('{{ asset('images/FondoUser.jpg') }}');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: end;
+        }
+
+        .background-div-pro {
+            background-color: rgba(127, 144, 245, 0.473);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+
+        .menu-vertical {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #343a40;
+            border-radius: 8px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        .menu-vertical li {
+            color: white;
+            padding: 10px 20px; 
+            font-size: 16px;
+            cursor: pointer;
+            text-align: left; 
+            border-bottom: 1px solid #495057; 
+            transition: background-color 0.3s ease; 
+        }
+
+        .menu-vertical li:hover {
+            background-color: #495057; 
+        }
+
+        .content-section {
+            display: none;
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .content-section table {
+            width: 100%;
+        }
+
+        .table {
+           max-width: 80%;
+           min-height: 80%;
+           justify-content: end;
         }
 
         .inner-container {
@@ -118,7 +165,16 @@
                             <a class="nav-link active" aria-current="page" href="#" style="color: white">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: white">Usuarios</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route('alumno.progresos') }}" style="color: white">Mi Progreso</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route('alumno.avisos') }}" style="color: white">Mis Avisos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route('alumno.grupos') }}" style="color: white">Mis Grupos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route('alumno.finanzas') }}" style="color: white">Mis Finanzas</a>
                         </li>
                     </ul>
                 </div>
@@ -126,25 +182,22 @@
         </div>
     </nav>
 
-    <!-- Contenido Principal -->
-    <div class="background-div">
-       @yield('content')
-    </div>
+    @yield('contents')
 
     <!-- Footer -->
     <footer class="text-center">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-4 d-flex flex-column align-items-center justify-content-center footer-link">
-                    <p>☎️ 871-797-6623</p>
-                    <p><a href="https://maps.app.goo.gl/DCgQmxAuw8RjsNTo6" class="footer-link">📍 Querétaro 120, La Merced, 27296 Torreón, Coah.</a></p>
+                    <p>8717976623</p>
+                    <p><a href="https://maps.app.goo.gl/DCgQmxAuw8RjsNTo6" class="footer-link">Querétaro 120, La Merced, 27296 Torreón, Coah.</a></p>
                 </div>
                 <div class="col-4 d-flex align-items-center justify-content-center">
                     <img src="{{ asset('images/JDKJulietasLogoBlanco.png') }}" alt="Footer Logo" class="footer-logo">
                 </div>
                 <div class="col-4 d-flex align-items-center justify-content-center footer-contact">
                     <p>
-                        <img src="{{ asset('images/facebookIcon.png') }}" alt="Facebook Icon" class="imgFace">
+                        <img src="{{ asset('images/facebookIcon.png') }}" alt="Facebook Icon" class="imgFace"> 
                         <a href="https://www.facebook.com/JidoKwanGymJulietas" class="footer-link">Jido Kwan Gym Julietas</a>
                     </p>
                 </div>
@@ -156,5 +209,3 @@
 </body>
 
 </html>
-
-// prove

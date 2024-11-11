@@ -12,22 +12,18 @@ use App\Http\Controllers\UserController;
 
 
 Route::get('/',[ProfesorController::class,'vistaprincipal']);
-
 Route::get('/login',[ProfesorController::class,'getlogin']);
-
 Route::get('/crear/examen',[ProfesorController::class,'crearexamen']);
 Route::get('/consulta/examenes',[ProfesorController::class,'consultaExamenes']);
 
 Route::get('/crear/clase',[ProfesorController::class,'crearclase']);
-
 Route::get('/modificar/clase',[ProfesorController::class,'modificarclase']);
-
 Route::get('/asignar/alumno/clase',[ProfesorController::class,'asignarAlumnoClase']);
 
-Route :: get('/alumno/progresos', [AlumnoController:: class , 'progresos']);
-Route :: get('/alumno/avisos', [AlumnoController:: class , 'avisos']);
-Route :: get('/alumno/grupos', [AlumnoController:: class , 'grupos']);
-Route :: get('/alumno/finanzas', [AlumnoController:: class , 'finanzas']);
+Route :: get('/alumno/progresos', [AlumnoController:: class , 'progresos']) -> name('alumno.progresos');
+Route :: get('/alumno/avisos', [AlumnoController:: class , 'avisos']) -> name('alumno.avisos');
+Route :: get('/alumno/grupos', [AlumnoController:: class , 'grupos']) -> name('alumno.grupos');
+Route :: get('/alumno/finanzas', [AlumnoController:: class , 'finanzas']) -> name('alumno.finanzas');
 
 
 Route::get('/admin/users', function () {
