@@ -16,6 +16,7 @@ Route::get('/',[ProfesorController::class,'vistaprincipal']);
 Route::get('/login',[ProfesorController::class,'getlogin']);
 
 Route::get('/crear/examen',[ProfesorController::class,'crearexamen']);
+Route::get('/consulta/examenes',[ProfesorController::class,'consultaExamenes']);
 
 Route::get('/crear/clase',[ProfesorController::class,'crearclase']);
 
@@ -43,4 +44,3 @@ Route::get ('/login/admin/addUser',[AdminController::class,'users']);
 Route::get ('/login/admin/addUser/userAdmin',[AdminController::class,'addAdmin']);
 Route::get ('/login/admin/addUser/userProfe',[AdminController::class,'addProfesor']);
 Route::get ('/login/admin/addUser/userAlumno',[AdminController::class,'addAlumno']);
-Route::get ('/login/admin/finanzas',[AdminController::class,'finanzasAdmin']);

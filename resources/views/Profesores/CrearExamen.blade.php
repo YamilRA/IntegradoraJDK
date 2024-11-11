@@ -1,7 +1,7 @@
     @extends('layouts.Molde')
     @section('title', 'Crear nuevo Examen')
     @section('content')
-    
+
     <!-- Contenido Principal -->
     <div class="background-div">
         <div class="inner-container">
@@ -22,8 +22,11 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="fechaExamen" class="form-label">Fecha del examen:</label>
-                    <input type="date" id="fechaExamen" class="form-control">
+                    <label for="fechaExamen" class="form-label">Fecha y hora del examen:</label>
+                    <div class="input-group">
+                        <input type="date" id="input-first-name" aria-label="First name" class="form-control">
+                        <input type="time" id="input-last-name" aria-label="Last name" class="form-control">
+                    </div>
                 </div>
 
                 <div class="mb-3">
@@ -37,6 +40,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary" style='background-color: #b20505'>Crear Examen</button>
+                <a href="/consulta/examenes" class="btn btn-secondary">Ver Examenes</a>
             </form>
         </div>
     </div>

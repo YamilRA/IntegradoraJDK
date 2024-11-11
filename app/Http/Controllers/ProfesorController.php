@@ -33,4 +33,7 @@ class ProfesorController extends Controller
     public function asignarAlumnoClase(){
         return view('Profesores.AsignarAlumnoClase');
     }
+    public function consultaExamenes(){
+        return view('Profesores.ConsultaExamenes');
+    }
 }

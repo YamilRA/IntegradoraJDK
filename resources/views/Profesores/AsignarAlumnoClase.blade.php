@@ -2,7 +2,6 @@
 @section('title', 'Asignar alumno a clase')
 @section('content')
 <!-- Contenido Principal -->
-<div class="background-div">
     <div class="inner-container-fluid">
         <div class="card my-4" >
             <div class="card-header text-white " style='background-color: #143d7c'>
@@ -39,5 +38,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection
