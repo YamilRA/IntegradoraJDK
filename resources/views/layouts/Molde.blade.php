@@ -48,6 +48,14 @@
             justify-content: center;
             align-items: center;
         }
+        
+        .background-check {
+            background-image: url('{{ asset('images/FondoUser.jpg') }}');
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: start;
+        }
 
         .inner-container {
             background: rgba(255, 255, 255, 0.8);

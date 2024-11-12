@@ -21,12 +21,12 @@ Route::get('/modificar/clase',[ProfesorController::class,'modificarclase']);
 Route::get('/asignar/alumno/clase',[ProfesorController::class,'asignarAlumnoClase']);
 Route::get('/profesores/info-alumnos',[ProfesorController::class,'infoalumnos']);
 
-Route :: get('/alumno/progresos', [AlumnoController:: class , 'progresos']) -> name('alumno.progresos');
+Route :: get('/alumno/cintas', [AlumnoController:: class , 'cintas']) -> name('alumno.cintas');
 Route :: get('/alumno/avisos', [AlumnoController:: class , 'avisos']) -> name('alumno.avisos');
 Route :: get('/alumno/grupos', [AlumnoController:: class , 'grupos']) -> name('alumno.grupos');
 Route :: get('/alumno/finanzas', [AlumnoController:: class , 'finanzas']) -> name('alumno.finanzas');
-
-
+Route :: get('/alumno/eventos', [AlumnoController:: class , 'eventos']) -> name('alumno.eventos');
+Route :: get('/alumno/progresos', [AlumnoController:: class , 'progresos']) -> name('alumno.progresos');
 Route::get('/admin/users', function () {
     return view('Admin/UsersAdmin');
 });
