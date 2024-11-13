@@ -36,18 +36,35 @@ class UserController extends Controller
         $roles = Role::all();
         return view('Admin.UsersAdmin', compact('roles'));
     }
+
+
+
+
     public function authenticate(Request $request)
 {
     $credentials = $request->only('username', 'password');
 
     if (Auth::attempt($credentials)) {
-        return redirect()->route('users.index'); 
+        $user = Auth::user();   
+        $role = $user->roles->first()->name ?? null;
+        
+        
+        switch ($role) {
+            case 'administrator':
+                return redirect()->route('InicioAdmin'); 
+            case 'teacher':
+                return redirect()->route('profesores.crearclases'); 
+            case 'student':
+                return redirect()->route('alumno.avisos'); 
+            
+        }
     }
 
     return back()->withErrors([
         'username' => 'Las credenciales no coinciden.',
     ]);
 }
+
 
     public function store(Request $request)
     {

@@ -8,8 +8,9 @@ class AdminController extends Controller
 {
     public function inicioAdmin()
     {
-        return view('Admin/InicioAdmin');
+        return view('Admin.InicioAdmin');
     }
+
     public function users()
     {
         return view('Admin/UsersAdmin');
