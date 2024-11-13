@@ -28,6 +28,30 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Fortify::authenticateUsing(function (Request $request) {
+            $user = CustomUser::where('username', $request->username)->first();
+
+            if ($user && Hash::check($request->password, $user->password)) {
+                return $user;
+            }
+            return null;
+        });
+
+        Fortify::loginView(function () {
+            return view('users.index'); 
+        });
+
+        /*Auth::afterLogin(function ($user) {
+            if ($user->hasRole('admin')) {
+                return redirect()->route('admin.inicioadmin'); 
+            } elseif ($user->hasRole('teacher')) {
+                return redirect()->route('teacher.crearclase'); 
+            } elseif ($user->hasRole('student')) {
+                return redirect()->route('student.avisos'); 
+            }
+
+            return redirect('/home'); 
+        });*/
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);

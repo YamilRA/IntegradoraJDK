@@ -12,12 +12,6 @@ class ProfesorController extends Controller
         return view('inicio');
     }
 
-    public function getlogin(){
-        $User=null;
-         $User = CustomUser::all();
-        return view('InicioSesion');
-    }
-
     public function crearexamen(){
         return view('Profesores.CrearExamen');
     }
