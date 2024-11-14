@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CustomUser;
 use App\Http\Controllers\Controller;
+use App\Models\Student;
 
 class ProfesorController extends Controller
 {
@@ -30,8 +31,11 @@ class ProfesorController extends Controller
         return view('Profesores.ModificarClase');
     }
 
-    public function asignarAlumnoClase(){
-        return view('Profesores.AsignarAlumnoClase');
+    public function asignarAlumnoClase($id){
+        $Student= Student::find($id);
+        
+        $Student->save();
+        return redirect()-> route('/asignar/alumno/clase');
     }
 
     public function infoalumnos(){
