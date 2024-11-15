@@ -2,12 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use App\Models\UserRol;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class CustomUser extends Model
+class CustomUser extends Authenticatable
 {
     protected $table = 'custom_users';
     protected $primaryKey = 'id';
@@ -22,4 +20,16 @@ class CustomUser extends Model
         return $this->hasMany(Loan::class, 'user_id', 'id');
     }
 
+    
+    public function roles()
+{
+    return $this->belongsToMany(Role::class, 'user_role', 'user_id', 'role_id');
+}
+
+
+   
+    public function hasRole($roleName)
+    {
+        return $this->roles()->where('name', $roleName)->exists();
+    }
 }

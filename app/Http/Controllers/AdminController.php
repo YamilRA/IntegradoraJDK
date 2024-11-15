@@ -10,6 +10,7 @@ class AdminController extends Controller
     {
         return view('Admin/InicioAdmin');
     }
+
     public function users()
     {
         return view('Admin/UsersAdmin');

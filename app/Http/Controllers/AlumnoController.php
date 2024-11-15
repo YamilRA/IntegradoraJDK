@@ -15,33 +15,33 @@ class AlumnoController extends Controller
 {
     public function avisos()
     {
-        return view('Alumnos/Avisos');
+        return view('Alumno.Avisos');
     }
 
     public function grupos()
     {
-        return view('Alumnos/Grupos');
+        return view('Alumno.Grupos');
     }
 
     public function finanzas()
     {
-        return view('Alumnos/Finanzas');
+        return view('Alumno.Finanzas');
     }
     public function progresos()
     {
-        return view('Alumnos/Progreso');
+        return view('Alumno.Progreso');
     }
     public function eventos(){
-        return view('Alumnos/Eventos');
+        return view('Alumno.Eventos');
     }
 
     public function cintas(){
-        return view('Alumnos/Cintas');
+        return view('Alumno.Cintas');
     }
 
     public function students_events()
     {
        
     }
-
+    
 }
