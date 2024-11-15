@@ -25,11 +25,10 @@ class CustomUser extends Authenticatable
 {
     return $this->belongsToMany(Role::class, 'user_role', 'user_id', 'role_id');
 }
-
-
    
-    public function hasRole($roleName)
-    {
-        return $this->roles()->where('name', $roleName)->exists();
-    }
+public function hasRole($role)
+{
+    return $this->roles->contains('name', $role);
+}
+
 }
