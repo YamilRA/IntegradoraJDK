@@ -59,7 +59,7 @@
 
         .inner-container {
             background: rgba(255, 255, 255, 0.8);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             width: auto;
             height: auto;
@@ -136,8 +136,8 @@
 
     <!-- Contenido Principal -->
     <div class="background-div">
-       @yield('content')
-    </div>
+           @yield('content')
+       </div>
 
     <!-- Footer -->
     <footer class="text-center">
