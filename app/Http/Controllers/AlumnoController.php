@@ -39,10 +39,9 @@ class AlumnoController extends Controller
         return view('Alumnos/Cintas');
     }
 
-    public function cintas_examenes()
+    public function students_events()
     {
-        $studentbelt = StudentBelt::all();
-        return view('Alumnos/Progreso',compact('studentbelt'));
+       
     }
 
 }
