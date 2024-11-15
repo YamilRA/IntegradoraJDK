@@ -23,7 +23,11 @@ Route::get('/consulta/examenes',[ProfesorController::class,'consultaExamenes']);
 Route::get('/crear/clase',[ProfesorController::class,'crearclase']);
 Route::get('/modificar/clase',[ProfesorController::class,'modificarclase']);
 Route::get('/asignar/alumno/clase',[ProfesorController::class,'asignarAlumnoClase']);
-Route::get('/profesores/info-alumnos',[ProfesorController::class,'infoalumnos']);
+
+Route::middleware(['auth'])->group(function () {
+    // Ruta para ver los alumnos por clase
+    Route::get('/profesor/alumnos', [ProfesorController::class, 'infoAlumnosPorProfesor'])->name('profesor.alumnos');
+});
 
 
 Route::get('/alumno/cintas', [AlumnoController::class, 'cintas'])->name('alumno.cintas');
