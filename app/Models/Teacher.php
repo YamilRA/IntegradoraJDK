@@ -15,4 +15,10 @@ class Teacher extends Model
     {
         return $this->hasMany(CustomClass::class, 'teacher_id');
     }
+
+    public function person()
+    {
+        return $this->belongsTo(People::class, 'person_id'); 
+    }
+
 }

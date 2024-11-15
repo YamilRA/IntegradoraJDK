@@ -1,40 +1,55 @@
 @extends('layouts.Molde')
+
 @section('title', 'Crear nueva Clase')
+
 @section('content')
-    <!-- Contenido Principal -->
-    <div class="background-div">
-        <div class="inner-container-fluid">
-        <div class="card my-4" >
-        <div class="card-header text-white " style='background-color: #143d7c'>
-            <h2>Crear Nueva Clase</h2>
+<div class="container">
+    <h2 class="text-center my-4">Lista de Clases</h2>
+
+    
+    <h2 class="text-center my-4">Crear Nueva Clase</h2>
+    <form action="{{ route('class.store') }}" method="POST">
+        @csrf
+        <div class="mb-3">
+            <label for="teacher_id" class="form-label">ID del Profesor</label>
+            <input type="number" name="teacher_id" id="teacher_id" class="form-control" required>
         </div>
-        <div class="card-body">
-            <form>
-                
-                <div class="mb-3">
-                    <label for="numEstudiantes" class="form-label">Número de Estudiantes:</label>
-                    <input type="number" id="numEstudiantes" class="form-control" max="30" min="1" placeholder="Máximo 30" value="1">
-                </div>
 
-                <div class="mb-3">
-                    <label for="diasClase" class="form-label">Días de la clase:</label>
-                    <input type="text" id="diasClase" class="form-control" placeholder="Ingresar los días de la clase">
-                </div>
-
-                <div class="mb-3">
-                    <label for="horaInicio" class="form-label">Hora de inicio:</label>
-                    <input type="time" id="fechaInicio" class="form-control" placeholder="Ingresar la hora de inicio de la clase">
-                </div>
-
-                <div class="mb-3">
-                    <label for="horaFin" class="form-label">Hora de fin:</label>
-                    <input type="time" id="horaFin" class="form-control" placeholder="Ingresar la hora de fin de la clase">
-                </div>
-
-                <button type="submit" class="btn btn-primary" style='background-color: #b20505'>Crear Clase</button>
-            </form>
+        <div class="mb-3">
+            <label for="capacity" class="form-label">Capacidad de la Clase</label>
+            <input type="number" name="capacity" id="capacity" class="form-control" required>
         </div>
-    </div>
+
+        <div class="mb-3">
+            <label for="schedule_day" class="form-label">Día de la Clase</label>
+            <input type="text" name="schedule_day" id="schedule_day" class="form-control" required>
         </div>
-    </div>
+
+        <div class="mb-3">
+            <label for="schedule_start" class="form-label">Hora de Inicio</label>
+            <input type="time" name="schedule_start" id="schedule_start" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="schedule_end" class="form-label">Hora de Fin</label>
+            <input type="time" name="schedule_end" id="schedule_end" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-danger w-100">Crear Clase</button>
+    </form>
+</div>
+
+
+<script>
+    function loadClassData(classData) {
+        document.getElementById('edit_teacher_id').value = classData.teacher_id;
+        document.getElementById('edit_capacity').value = classData.capacity;
+        document.getElementById('edit_schedule_day').value = classData.schedule_day;
+        document.getElementById('edit_schedule_start').value = classData.schedule_start;
+        document.getElementById('edit_schedule_end').value = classData.schedule_end;
+        document.getElementById('edit_status').value = classData.status;
+
+        document.getElementById('editClassForm').action = `/actualizar/clase/${classData.id}`;
+    }
+</script>
 @endsection
