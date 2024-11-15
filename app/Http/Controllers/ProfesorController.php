@@ -31,11 +31,8 @@ class ProfesorController extends Controller
         return view('Profesores.ModificarClase');
     }
 
-    public function asignarAlumnoClase($id){
-        $Student= Student::find($id);
-        
-        $Student->save();
-        return redirect()-> route('/asignar/alumno/clase');
+    public function asignarAlumnoClase($CustomClassId){
+        return redirect()-> route('asignar.alumno');
     }
 
     public function infoalumnos(){

@@ -18,7 +18,8 @@ Route::get('/consulta/examenes',[ProfesorController::class,'consultaExamenes']);
 
 Route::get('/crear/clase',[ProfesorController::class,'crearclase']);
 Route::get('/modificar/clase',[ProfesorController::class,'modificarclase']);
-Route::get('/asignar/alumno/clase',[ProfesorController::class,'asignarAlumnoClase']);
+Route::post('/asignar-alumno/{classId}', [ProfesorController::class, 'asignarAlumnoClase'])->name('asignar.alumno');
+// Route::post('/asignar/alumno/clase',[ProfesorController::class,'asignarAlumnoClase']);
 Route::get('/profesores/info-alumnos',[ProfesorController::class,'infoalumnos']);
 
 Route :: get('/alumno/cintas', [AlumnoController:: class , 'cintas']) -> name('alumno.cintas');
