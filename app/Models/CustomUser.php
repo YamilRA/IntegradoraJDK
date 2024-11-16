@@ -25,12 +25,16 @@ class CustomUser extends Model
         return $this->hasMany(Loan::class, 'user_id', 'id');
     }
 
-    public function people(){
-        return $this->hasMany(People::class, 'user_id', 'id');
-    }
+    
+    public function roles()
+{
+    return $this->belongsToMany(Role::class, 'user_role', 'user_id', 'role_id');
+}
 
-    public function notification(){
-        return $this->hasToMany(Notification::class, 'user_id', 'id');
-    }
 
+   
+    public function hasRole($roleName)
+    {
+        return $this->roles()->where('name', $roleName)->exists();
+    }
 }

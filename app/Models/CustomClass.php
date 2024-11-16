@@ -13,7 +13,7 @@ class CustomClass extends Model
 
     public function Student()
     {
-        return $this->hasOne(Student::class, 'student_id', 'id');
+        return $this->belongsToMany(Student::class, 'student_classes', 'class_id', 'student_id');
     }
 
     public function StudentClass(){
