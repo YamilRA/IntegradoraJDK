@@ -10,9 +10,7 @@ use App\Models\CustomUser;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
-
-
-
+use App\Models\Teacher;
 
 Route::get('/',[ProfesorController::class,'vistaprincipal']);
 Route::get('/login', [UserController::class, 'getlogin'])->name('login');
@@ -28,6 +26,7 @@ Route::get('/modificar/clase',[ProfesorController::class,'modificarclase']);
 
 Route::get('/asignar/alumno/clase',[ProfesorController::class,'asignarAlumnoClase']);
 Route::get('/profesores/info-alumnos',[ProfesorController::class,'infoalumnos']);
+Route::get('/profesor/avisos',[ProfesorController::class,'avisosTeacher']);
 
 Route :: get('/alumno/cintas', [AlumnoController:: class , 'cintas']) -> name('alumno.cintas');
 Route :: get('/alumno/avisos', [AlumnoController:: class , 'avisos']) -> name('alumno.avisos');
@@ -49,5 +48,4 @@ Route::get('/molde',[LayoutController::class,'molde']);
 Route::get('/login/admin', [AdminController::class,'inicioAdmin']);
 Route::get ('/login/admin/addUser',[AdminController::class,'users']);
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
-
 

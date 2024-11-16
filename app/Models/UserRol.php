@@ -9,7 +9,7 @@ use App\Models\CustomUser;
 
 class UserRol extends Model
 {
-    protected $table = 'user_rol';
+    protected $table = 'user_role';
     protected $primaryKey = 'id';
     public $fillable = ["id", 'user_id', "role_id", "created_at", "updated_at"];
    

@@ -14,4 +14,9 @@ class Administrator extends Model
     {
         return $this->belongsTo(People::class, 'person_id', 'id');
     }
+
+    public function Notification()
+    {
+        return $this->hasMany(Notification::class, 'admin_id', 'id');
+    }
 }

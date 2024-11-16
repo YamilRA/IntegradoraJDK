@@ -36,4 +36,22 @@ class ProfesorController extends Controller
     public function consultaExamenes(){
         return view('Profesores.ConsultaExamenes');
     }
+
+/*    public function dashboard()
+    {
+        return view('teacher.crearclase');
+    }
+
+    public function activeUsers()
+{
+    $activeUsers = User::where('status', 'active')->get(); // Solo usuarios activos
+    return view('users.active', compact('activeUsers'));
+}
+
+*/
+    public static function avisosTeacher(){
+        $users= CustomUser::with('userRoles')->get();
+        // return view('Profesores.Notifications', compact('users'));
+        return $users;
+    }
 }

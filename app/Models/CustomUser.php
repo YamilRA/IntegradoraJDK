@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\UserRol;
+use App\Models\Loan;
+use App\Models\Notification;
 
-class CustomUser extends Authenticatable
+class CustomUser extends Model
 {
     protected $table = 'custom_users';
     protected $primaryKey = 'id';
@@ -21,6 +23,14 @@ class CustomUser extends Authenticatable
     public function loan()
     {
         return $this->hasMany(Loan::class, 'user_id', 'id');
+    }
+
+    public function people(){
+        return $this->hasMany(People::class, 'user_id', 'id');
+    }
+
+    public function notification(){
+        return $this->hasToMany(Notification::class, 'user_id', 'id');
     }
 
 }

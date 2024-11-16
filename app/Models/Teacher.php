@@ -18,4 +18,5 @@ class Teacher extends Model
 
         return $this->hasMany(CustomClass::class, 'teacher_id', 'id');
     }
+
 }
