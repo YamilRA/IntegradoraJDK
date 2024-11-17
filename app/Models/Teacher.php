@@ -7,16 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Teacher extends Model
 {
     protected $table = 'teachers';
-    public $fillable = [ 'person_id', 'rfc'];
+    protected $primaryKey = 'id';
+    public $fillable = ['person_id', 'rfc', 'created_at', 'updated_at'];
 
-    public function People(){
-
-        return $this->belongsTo(People::class, 'person_id', 'id');
-    }
-
-    public function CustomClass(){
-
-        return $this->hasMany(CustomClass::class, 'teacher_id', 'id');
+    // Relación con las clases que imparte el profesor
+    public function customClasses()
+    {
+        return $this->hasMany(CustomClass::class, 'teacher_id');
     }
 
     public function person()

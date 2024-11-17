@@ -11,7 +11,7 @@ use App\Models\Teacher;
 
 use Illuminate\Http\Request;
 
-class AlumnoController extends Controller
+class StudentController extends Controller
 {
     public function avisos()
     {
