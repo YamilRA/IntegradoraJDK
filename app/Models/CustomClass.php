@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class CustomClass extends Model
 {
-    protected $table = 'CustomClasses';
+    protected $table = 'customclasses';
     protected $primaryKey = 'id';
-    public $fillable = ['id', 'teacher_id', 'capacity', "schedule_day", "schedule_start", 
-                        "schedule_end", 'created_at', 'updated_at'];
+    protected $fillable = [
+        'teacher_id',
+        'capacity',
+        'schedule_day',
+        'schedule_start',
+        'schedule_end',
+    ];
 
     public function Student()
     {
@@ -21,8 +26,10 @@ class CustomClass extends Model
         return $this->hasMany(StudentClass::class, 'class_id', 'id');
     }
 
-    public function Teacher(){
+    public function teacher()
+{
+    return $this->belongsTo(Teacher::class, 'teacher_id');
+}
 
-        return $this->belongsToMany(Teacher::class, 'teacher_id', 'id');
-    }
+
 }

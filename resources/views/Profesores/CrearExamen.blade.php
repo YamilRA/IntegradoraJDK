@@ -10,33 +10,34 @@
             <h2>Crear Nuevo Examen</h2>
         </div>
         <div class="card-body">
-            <form>
+            <form action="{{ route('examen.store') }}" method="POST">
+                @csrf
                 <div class="mb-3">
                     <label for="grupoSeleccionado" class="form-label">Nombre del examen:</label>
-                    <input type="text" id="examenNombre" class="form-control" placeholder="Ingresar el nombre del examen">
+                    <input type="text" name="name" id="examenNombre" class="form-control" placeholder="Ingresar el nombre del examen">
                 </div>
 
                 <div class="mb-3">
                     <label for="ubicacion" class="form-label">Ubicación del examen:</label>
-                    <input type="text" id="ubicacion" class="form-control" placeholder="Ingresar la ubicación del examen">
+                    <input type="text" name="location" id="ubicacion" class="form-control" placeholder="Ingresar la ubicación del examen">
                 </div>
 
                 <div class="mb-3">
                     <label for="fechaExamen" class="form-label">Fecha y hora del examen:</label>
                     <div class="input-group">
-                        <input type="date" id="input-first-name" aria-label="First name" class="form-control">
-                        <input type="time" id="input-last-name" aria-label="Last name" class="form-control">
+                        <input type="datetime-local" name="date"  id="input-first-name" aria-label="First name" class="form-control">
+                        
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="horaInicio" class="form-label">Duracion del examen:</label>
-                    <input type="time" id="horaInicio" class="form-control" placeholder="Ingresar la hora de inicio del examen">
+                    <input type="number" name="duration"  id="horaInicio" class="form-control" placeholder="Ingresar la hora de inicio del examen">
                 </div>
 
                 <div class="mb-3">
                     <label for="descripcionExamen" class="form-label">Descripción del examen:</label>
-                    <textarea id="descripcionExamen" class="form-control" rows="3" placeholder="Ingresar la descripción del examen"></textarea>
+                    <textarea name="description" id="descripcionExamen" class="form-control" rows="3" placeholder="Ingresar la descripción del examen"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary" style='background-color: #b20505'>Crear Examen</button>
