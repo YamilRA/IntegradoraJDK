@@ -65,8 +65,11 @@ class ProfesorController extends Controller
 
 */
     public static function avisosTeacher(){
-        $users= CustomUser::with('userRoles')->get();
-        // return view('Profesores.Notifications', compact('users'));
-        return $users;
+        $users= CustomUser::leftJoin('user_role as ur', 'ur.user_id', 'custom_users.id')
+                            ->where('role_id', 2)->get();
+         //return view('Profesores.Notifications', compact('users'));
+
+         return $users;
+      
     }
 }
