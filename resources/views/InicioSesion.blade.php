@@ -71,20 +71,26 @@
             <img src="{{ asset('images/JDKJulietasLogoBlanco.png') }}" alt="Logo" style="width: 100px;">
         </div>
         <h3 class="text-center">Inicio de Sesión</h3>
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-            <div>
-                <label for="username">Usuario:</label>
-                <input type="text" id="username" name="username" required>
+        <form>
+            <div class="form-group">
+                <div class="input-container">
+                    <input placeholder="Usuario" class="input-field" type="text">
+                    <label for="input-field" class="input-label">Usuario</label>
+                    <span class="input-highlight"></span>
+                </div>
             </div>
-            <div>
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
+            <div class="form-group">
+                <div class="input-container">
+                    <input placeholder="Contraseña" class="input-field" type="password">
+                    <label for="input-field" class="input-label">Contraseña</label>
+                    <span class="input-highlight"></span>
+                </div>
             </div>
-            <button type="submit">Iniciar sesión</button>
+            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+            <div class="text-center mt-3">
+                <a href="#">¿Olvidó su contraseña?</a>
+            </div>
         </form>
-        
-            
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

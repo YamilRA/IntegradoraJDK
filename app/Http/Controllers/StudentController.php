@@ -11,7 +11,7 @@ use App\Models\Teacher;
 
 use Illuminate\Http\Request;
 
-class AlumnoController extends Controller
+class StudentController extends Controller
 {
     public function avisos()
     {
@@ -39,10 +39,9 @@ class AlumnoController extends Controller
         return view('Alumno.Cintas');
     }
 
-    public function cintas_examenes()
+    public function students_events()
     {
-        $studentbelt = StudentBelt::all();
-        return view('Alumno.Progreso',compact('studentbelt'));
+       
     }
     
 }

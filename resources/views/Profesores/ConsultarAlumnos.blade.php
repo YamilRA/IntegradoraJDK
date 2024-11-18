@@ -1,4 +1,4 @@
-@extends('layout.Molde')
+@extends('layouts.MoldeAl')
 @section('title', 'Info Alumnos')
 
 @section('content')

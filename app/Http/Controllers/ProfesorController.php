@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\CustomClass; // Clase CustomClass para acceder a las clases
-use App\Models\Student; // Modelo de estudiantes
+use App\Models\CustomUser;
+use App\Http\Controllers\Controller;
 
 class ProfesorController extends Controller
 {
@@ -24,8 +24,8 @@ class ProfesorController extends Controller
         return view('Profesores.ModificarClase');
     }
 
-    public function asignarAlumnoClase(){
-        return view('Profesores.AsignarAlumnoClase');
+    public function asignarAlumnoClase($CustomClassId){
+        return redirect()-> route('asignar.alumno');
     }
 
     // Método para consultar a los alumnos y sus clases
@@ -50,5 +50,26 @@ class ProfesorController extends Controller
 
     public function consultaExamenes(){
         return view('Profesores.ConsultaExamenes');
+    }
+
+/*    public function dashboard()
+    {
+        return view('teacher.crearclase');
+    }
+
+    public function activeUsers()
+{
+    $activeUsers = User::where('status', 'active')->get(); // Solo usuarios activos
+    return view('users.active', compact('activeUsers'));
+}
+
+*/
+    public static function avisosTeacher(){
+        $users= CustomUser::leftJoin('user_role as ur', 'ur.user_id', 'custom_users.id')
+                            ->where('role_id', 2)->get();
+         //return view('Profesores.Notifications', compact('users'));
+
+         return $users;
+      
     }
 }
